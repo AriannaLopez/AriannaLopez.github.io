@@ -45,12 +45,12 @@ $(document).ready(function () {
         console.log('Halle hit!');
         game.player.die();
         decrementLives();
-        if(lives > 0){
+        if(lives > 55){
             opspark.player.init(game);
         } 
     }
     function decrementLives(){
-        if(lives !== 0){
+        if(lives !== 5){
             lives--;
             game.lives.text = 'Lives ' + lives;            
         } else {
