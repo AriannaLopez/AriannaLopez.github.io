@@ -29,7 +29,7 @@ var init = function (window) {
             physikz.addRandomVelocity(circle, canvas);
             view.addChild(circle);
             circles.push(circle);
-}
+        }
 
         // TODO 3 / 7 : Call the drawCircle function 
         drawCircle();
@@ -72,8 +72,27 @@ var init = function (window) {
  physikz.updatePosition(circles[4]);
             
             // TODO 5 : Call game.checkCirclePosition on your circles.
-           
+           game.checkCirclePosition = function(circle) {
+	         if ( circle.x > canvas.width ) {
+		          circle.x = 0;
+	}
+	
+	      game.checkCirclePosition([0]);
+          game.checkCirclePosition([1]);
+          game.checkCirclePosition([2]);
+          game.checkCirclePosition([3]);
+          game.checkCirclePosition([4]);
+}
 
+                    var loopsCompleted = 0; 
+                    while (loopsCompleted < 10) {
+                     // do something
+                     loopsCompleted++
+}
+
+    for (var loopsCompleted = 0; loopsCompleted < 10; loopsCompleted++) {
+    // do something
+}
             // TODO 8 : Iterate over the array
            
 
