@@ -10,7 +10,7 @@ var init = function (window) {
         data = 'assets/spritesheet/halle/data-v9.json',
         app = opspark.makeApp(world.makeRules()),
         canvas = app.canvas, 
-        view = app.view,
+        view = app.view, hud,
         fps = draw.fps('#000');
     
     var 
@@ -32,9 +32,10 @@ var init = function (window) {
     ground = opspark.makeGround(app);
 
     // TODO 2 : add background
-
-    
-    var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q your mom!', 
+        var background = opspark.makeBackground(app,ground);
+        view.addChild(background);
+        
+    var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q: SELF DESTRUCT!', 
         '20px Arial',
         '#ccc', 'left');
     help.x = 10;
@@ -71,7 +72,8 @@ var init = function (window) {
     }
     
     // TODO 1 : add a heads-up display to game
-
+    var hud = opspark.makeHud();
+    view.addChild(hud);
 
     // TODO 6 : create game manager
 
