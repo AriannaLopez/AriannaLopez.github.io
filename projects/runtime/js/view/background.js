@@ -68,7 +68,7 @@ var background = function (window) {
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap('img/tree.png');
             tree.x = 500;
-            tree.y = 100;
+            tree.y = 70;
             background.addChild(tree);
             
         } // end of render function - DO NOT DELETE
@@ -85,10 +85,18 @@ var background = function (window) {
             // TODO 4: Part 2 - Move the tree!
             tree.x = tree.x - 1;
             if(tree.x < -200) {
-    tree.x = canvasWidth;
-}
+                tree.x = canvasWidth;
+            }
             // TODO 5: Part 2 - Parallax
-            
+            for (var i = 0; i < buildings.length; i++){
+                var building = buildings[i];
+             
+
+                building.x = building.x -3;
+                if(building.x < -200) {
+                    building.x = canvasWidth;
+                }
+            }
 
         } // end of update function - DO NOT DELETE
         
